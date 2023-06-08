@@ -50,10 +50,30 @@
   height: 4em;
   width: 4em;
   margin: 0 auto;
+  border-radius: 50%;
 }
 
 .gh-container {
-  display: flex;
+  display: grid;
   gap: 4em;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.filter-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 0;
+}
+
+.selected {
+  border-bottom: red 2px solid;
+}
+
+.paginator {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
 }

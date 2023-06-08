@@ -1,16 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 
-import  { TopStars } from './TopStars';
+import { TopStars } from './TopStars';
+import { Filter } from './Filter';
+import { Option } from './types';
 
 function App() {
+  const [language, setLanguage] = useState<Option>('All');
+  const [page, setPage] = useState(1);
+
   return (
     <>
-      <TopStars />
-     </>
-  )
+      <Filter language={language} setLanguage={setLanguage} setPage={setPage}  />
+      <TopStars language={language} page={page} setPage={setPage} />
+    </>
+  );
 }
 
-export default App
+export default App;
